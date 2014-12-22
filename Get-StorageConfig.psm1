@@ -9,7 +9,7 @@
 function Get-StorageConfig
 {
     [CmdletBinding()]
-    [OutputType([System.IO.FileInfo])]
+    [OutputType([hashtable])]
     Param
     (
         # CimSession
@@ -43,7 +43,6 @@ function Get-StorageConfig
     }
     End
     {
-        $json = $Storages|ConvertTo-Json
-        return $json
+        return $Storages
     }
 }
